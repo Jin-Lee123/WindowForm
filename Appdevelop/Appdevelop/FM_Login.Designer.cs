@@ -88,6 +88,7 @@ namespace Appdevelop
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(304, 27);
             this.textBox2.TabIndex = 5;
+            this.textBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox2_KeyDown);
             // 
             // Form1
             // 

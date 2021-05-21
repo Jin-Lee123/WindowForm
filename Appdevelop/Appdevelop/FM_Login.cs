@@ -13,6 +13,7 @@ namespace Appdevelop
         public Form1()
         {
             InitializeComponent();
+            this.Tag = "FAIL";
         }
         private int PwFailCount = 0;
         private void button2_Click(object sender, EventArgs e)
@@ -94,6 +95,14 @@ namespace Appdevelop
             FM_PassWord fmpassword = new FM_PassWord();
             fmpassword.ShowDialog();
             this.Visible = true;     //화면닫으면 다시 로그인 화면 나옴!
+        }
+
+        private void textBox2_KeyDown(object sender, KeyEventArgs e)  //엔터 쳐서 로그인 하기
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button2_Click(null, null);  //엔터 쳐서 로그인 하기
+            }
         }
     }
 }
