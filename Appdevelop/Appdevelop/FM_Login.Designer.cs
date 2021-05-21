@@ -39,7 +39,7 @@ namespace Appdevelop
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(443, 341);
+            this.button1.Location = new System.Drawing.Point(247, 244);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(125, 51);
             this.button1.TabIndex = 0;
@@ -49,7 +49,7 @@ namespace Appdevelop
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(600, 343);
+            this.button2.Location = new System.Drawing.Point(411, 247);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(128, 48);
             this.button2.TabIndex = 1;
@@ -79,21 +79,21 @@ namespace Appdevelop
             // 
             this.textBox1.Location = new System.Drawing.Point(168, 79);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(183, 27);
+            this.textBox1.Size = new System.Drawing.Size(304, 27);
             this.textBox1.TabIndex = 4;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(174, 143);
+            this.textBox2.Location = new System.Drawing.Point(168, 142);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(176, 27);
+            this.textBox2.Size = new System.Drawing.Size(304, 27);
             this.textBox2.TabIndex = 5;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(564, 320);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
@@ -101,7 +101,7 @@ namespace Appdevelop
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "LOG IN";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -41,7 +41,7 @@ namespace Appdevelop
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(474, 353);
+            this.button1.Location = new System.Drawing.Point(341, 314);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(89, 33);
             this.button1.TabIndex = 0;
@@ -51,7 +51,7 @@ namespace Appdevelop
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(598, 351);
+            this.button2.Location = new System.Drawing.Point(455, 314);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(97, 34);
             this.button2.TabIndex = 1;
@@ -88,30 +88,30 @@ namespace Appdevelop
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(202, 103);
+            this.textBox1.Location = new System.Drawing.Point(217, 103);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(197, 27);
+            this.textBox1.Size = new System.Drawing.Size(276, 27);
             this.textBox1.TabIndex = 5;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(208, 166);
+            this.textBox2.Location = new System.Drawing.Point(217, 163);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(178, 27);
+            this.textBox2.Size = new System.Drawing.Size(276, 27);
             this.textBox2.TabIndex = 6;
             // 
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(217, 233);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(168, 27);
+            this.textBox3.Size = new System.Drawing.Size(276, 27);
             this.textBox3.TabIndex = 7;
             // 
             // FM_PassWord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(581, 376);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
