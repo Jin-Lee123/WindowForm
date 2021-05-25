@@ -70,7 +70,8 @@ namespace DEV_Form
                 string sCustName = txtCustName.Text;   //품목명
                 string sStartDate = CustStart.Text;     //출시 시작일자
                 string sEndDate = CustEnd.Text;         //출시 종료 일자
-
+                string sCustType = "V";
+                if (CustType.Checked == true) sCustType = "C";
 
                 string sBizType = "";
                 if (rdo1.Checked == true) sBizType = "상용차부품";   
@@ -92,6 +93,7 @@ namespace DEV_Form
                                                              " WHERE CUSTCODE LIKE '%" + sCustCode + "%' " +
                                                              "   AND CUSTNAME LIKE '%" + sCustName + "%' " +
                                                              "   AND BizType  = '" + sBizType + "'" +
+                                                              "   AND CUSTTYPE  = '" + sCustType + "'" +
                                                              "   AND FIRSTDATE BETWEEN '" + sStartDate + "' AND '" + sEndDate + "'";
                                                             
 
@@ -171,10 +173,7 @@ namespace DEV_Form
             string sBizType = dgvGrid.CurrentRow.Cells["BIZTYPE"].Value.ToString();
             string sUseFlag = dgvGrid.CurrentRow.Cells["USEFLAG"].Value.ToString();
             string sFirstDate = dgvGrid.CurrentRow.Cells["FIRSTDATE"].Value.ToString();
-            string sMakeDate = dgvGrid.CurrentRow.Cells["MAKEDATE"].Value.ToString();
-            string sMaker = dgvGrid.CurrentRow.Cells["MAKER"].Value.ToString();
-            string sEditDate = dgvGrid.CurrentRow.Cells["EDITDATE"].Value.ToString();
-            string sEditor = dgvGrid.CurrentRow.Cells["EDITOR"].Value.ToString();
+  
 
             SqlCommand cmd = new SqlCommand();
             SqlTransaction Tran;
@@ -195,15 +194,13 @@ namespace DEV_Form
                                       "        BIZTYPE     = '" + sBizType + "',          " +
                                       "        USEFLAG     = '" + sUseFlag + "',          " +
                                       "        FIRSTDATE   = '" + sFirstDate + "',        " +
-                                      "        MAKEDATE    = '" + sMakeDate + "',         " +
-                                      "        MAKER       = '" + sMaker + "',            " +
-                                      "        EDITDATE    = GETDATE()                    " +
-                                      "        EDITOR      = '" + Common.LogInId + "',    " +
+                                      "        EDITDATE    = GETDATE() ,                   " +
+                                      "        EDITOR      = '" + Common.LogInId + "'     " +
 
-                                      "  WHERE ITEMCODE = '" + sCustCode + "'" +
+                                      "  WHERE CUSTCODE = '" + sCustCode + "'" +
                                       " IF (@@ROWCOUNT =0)                   " +
-                                      "INSERT INTO TB_CUST_LJ(CUSTCODE,CUSTTYPE ,CUSTNAME,BIZCLASS, BIZTYPE, USEFLAG,FIRSTDATE , MAKEDATE,MAKER , EDITDATE, EDITOR  ) " +
-                                      "VALUES('" + sCustCode + "','" + sCustType + "','" + sCustName + "','" + sBizClass + "','" + sBizType + "','" + sUseFlag + "','" + sFirstDate + "','" + sMakeDate + "','" + sMaker + "',GETDATE(),'" + Common.LogInId + "')";
+                                      "INSERT INTO TB_CUST_LJ(CUSTCODE,CUSTTYPE ,CUSTNAME,BIZCLASS, BIZTYPE, USEFLAG,FIRSTDATE , MAKEDATE,MAKER  ) " +
+                                      "VALUES('" + sCustCode + "','" + sCustType + "','" + sCustName + "','" + sBizClass + "','" + sBizType + "','" + sUseFlag + "','" + sFirstDate + "',GETDATE(),'" + Common.LogInId + "')";
             cmd.ExecuteNonQuery();
 
             //성공시 DB COMMIT
