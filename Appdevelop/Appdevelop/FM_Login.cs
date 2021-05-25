@@ -73,6 +73,8 @@ namespace Appdevelop
                 // 3. 로그인 성공!
                 else
                 {
+                    DEV_Form.Common.LogInId = textBox1.Text;
+                    DEV_Form.Common.LogInName = DtTemp.Rows[0]["USERNAME"].ToString();  //유저 명을 Common 에 등록
                     this.Tag = DtTemp.Rows[0]["USERNAME"].ToString(); // 유저 명을 메인화면으로 보냄
                     MessageBox.Show(Tag + "님 반갑습니다");
                     this.Close();

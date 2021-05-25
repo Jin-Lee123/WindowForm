@@ -1,14 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using DEV_Form;
 
 namespace Appdevelop
 {
@@ -17,13 +9,17 @@ namespace Appdevelop
         public FM_Main()
         {
             InitializeComponent();
+            //로그인 폼 호출
             Form1 Login = new Form1();
             Login.ShowDialog();
+
             tssUserName.Text = Login.Tag.ToString();
             if (Login.Tag.ToString() == "FAIL")
             {
                 System.Environment.Exit(0);
             }
+
+
             // 버튼에 이벤트 (종료)추가
             this.stbExit.Click += new System.EventHandler(this.stbExit_Click);
             // 버튼에 이벤트 (닫기)추가
