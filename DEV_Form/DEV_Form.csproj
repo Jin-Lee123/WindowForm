@@ -10,4 +10,10 @@
     <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="Appdevelop">
+      <HintPath>..\Appdevelop\Appdevelop\bin\Debug\net5.0-windows\Appdevelop.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

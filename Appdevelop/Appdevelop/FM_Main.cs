@@ -22,11 +22,45 @@ namespace Appdevelop
 
             // 버튼에 이벤트 (종료)추가
             this.stbExit.Click += new System.EventHandler(this.stbExit_Click);
+            
             // 버튼에 이벤트 (닫기)추가
             this.stbClose.Click += new System.EventHandler(this.stbClose_Click);
+            
             // 메뉴 클릭 이벤트 추가(테스트 화면 참조)
             this.M_SYSTEM.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.drp);
+
+           
+        //----------------------------------------------------------------------------------
+            // 조회에 이벤트 추가
+            this.stbSearch.Click += new System.EventHandler(this.stbSearch_Click);
+            // 추가에 이벤트 추가
+            this.stbInsert.Click += new System.EventHandler(this.stbInsert_Click);
+            // 삭제에 이벤트 추가
+            this.stbDelete.Click += new System.EventHandler(this.stbDelete_Click);
+            // 저장에 이벤트 추가
+            this.stbSave.Click += new System.EventHandler(this.stbSave_Click);
+        
         }
+
+        private void stbSearch_Click(object sender, EventArgs e) 
+        {
+            ChildCommand("SEARCH");
+        }     
+        private void stbInsert_Click(object sender, EventArgs e) 
+        {
+            ChildCommand("NEW");
+        }     
+        private void stbDelete_Click(object sender, EventArgs e) 
+        {
+            ChildCommand("DELETE");
+        }    
+        private void stbSave_Click(object sender, EventArgs e) 
+        {
+            ChildCommand("SAVE");
+        }      
+       //---------------------------------------------------------------------------
+        
+        
         private void stbExit_Click(object sender, EventArgs e)     // 종료버튼
         {
             this.Close();
@@ -74,6 +108,19 @@ namespace Appdevelop
 
             myTabControl1.AddForm(Showform);   //탭페이지에 폼을 추가하여 오픈한다.
         }
+        private void ChildCommand(string Command)
+        {
+            if (this.myTabControl1.TabPages.Count == 0) return;
+            var Child = myTabControl1.SelectedTab.Controls[0] as DEV_Form.ChildInterFace;
+            switch (Command)
+            {
+                case "NEW"   : Child.DoNew();  break;
+                case "SAVE"  : Child.Save();   break;
+                case "SEARCH": Child.Inquire();break;
+                case "DELETE": Child.Delete(); break;
+            }
+        }
+
     }
 
     public partial class MDIForm : TabPage
