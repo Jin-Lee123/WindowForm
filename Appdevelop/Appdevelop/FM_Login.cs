@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Windows.Forms;
 
 
+
 namespace Appdevelop
 {
     public partial class Form1 : Form
@@ -22,7 +23,7 @@ namespace Appdevelop
         {
             try
             {
-                Connect = new SqlConnection("Data Source=61.105.9.203;Initial Catalog=AppDev; User ID=kfqs1;Password=1234");
+                Connect = new SqlConnection("Data Source=222.235.141.8;Initial Catalog=AppDev; User ID=kfqs1;Password=1234");
 
                 Connect.Open(); //데이터 베이스에 접속 한다.
 
@@ -74,8 +75,8 @@ namespace Appdevelop
                 // 3. 로그인 성공!
                 else
                 {
-                    Common.LogInId = textBox1.Text;
-                    Common.LogInName = DtTemp.Rows[0]["USERNAME"].ToString();  //유저 명을 Common 에 등록
+                    DEV_Form.Common.LogInId = textBox1.Text;
+                    DEV_Form.Common.LogInName = DtTemp.Rows[0]["USERNAME"].ToString();  //유저 명을 Common 에 등록
                     this.Tag = DtTemp.Rows[0]["USERNAME"].ToString(); // 유저 명을 메인화면으로 보냄
                     MessageBox.Show(Tag + "님 반갑습니다");
                     this.Close();

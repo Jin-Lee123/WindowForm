@@ -2,7 +2,6 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-using Appdevelop;
 
 
 namespace DEV_Form
@@ -11,7 +10,7 @@ namespace DEV_Form
     {
         #region Connection Init
         private SqlConnection Conn = null;
-        private string ConnInfo = "Data Source=61.105.9.203;Initial Catalog=AppDev; User ID=kfqs1;Password=1234";
+        private string ConnInfo = "Data Source=222.235.141.8;Initial Catalog=AppDev; User ID=kfqs1;Password=1234";
         #endregion
 
         public Fm_Cust()
